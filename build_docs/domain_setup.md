@@ -8,7 +8,9 @@
    - Label: Gafell Website
    - Type: reCAPTCHA v2
    - Domains: Add both gafell.com and gnuell.github.io
-4. Copy the Site Key and replace `YOUR_RECAPTCHA_SITE_KEY` in index.html
+4. reCAPTCHA keys have been configured:
+   - Site Key: 6LdSdq8qAAAAABgTDGLPePsCVOva-M4lOyDoZyz4 (already added to index.html)
+   - Secret Key: 6LdSdq8qAAAAABKAq0TwW51vSZJ6b0ShJzPBBYq- (keep secure, used server-side)
 
 ## Pointing gafell.com to GitHub Pages
 

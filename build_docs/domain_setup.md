@@ -40,8 +40,9 @@ The contact form is configured to use Formspree for handling email submissions. 
 
 1. Go to https://formspree.io/
 2. Sign up and create a new form
-3. Replace the form action URL in index.html with your Formspree endpoint
-4. Configure the form to forward submissions to info@gafell.com
+3. Formspree has been configured:
+   - Form endpoint: https://formspree.io/f/xbjvyeqb
+   - Submissions will be forwarded to info@gafell.com
 
 ## Verification
 

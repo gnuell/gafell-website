@@ -12,6 +12,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     
@@ -146,7 +149,7 @@
         <div class="container">
             <h2 class="section__title" data-en="Contact Us" data-zh="聯絡我們">Contact Us</h2>
             <div class="contact__content">
-                <form class="contact__form">
+                <form class="contact__form" action="https://formspree.io/f/info@gafell.com" method="POST">
                     <div class="form__group">
                         <label for="name" data-en="Name" data-zh="姓名">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -163,8 +166,17 @@
                         <label for="message" data-en="Message" data-zh="訊息">Message</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
+                    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
                     <button type="submit" class="btn btn--primary" data-en="Send Message" data-zh="發送訊息">Send Message</button>
                 </form>
+                <div class="contact__info">
+                    <div class="contact__address">
+                        <p data-en="GAFELL LIMITED" data-zh="GAFELL LIMITED">GAFELL LIMITED</p>
+                        <p data-en="18/F, Unit L, Superluck Ind CTR PH 2, 30-38 Tai Chung Road, Tsuen Wan, NT" 
+                           data-zh="荃灣 大涌道30-38號荃運工業中心二期18樓L室">18/F, Unit L, Superluck Ind CTR PH 2, 30-38 Tai Chung Road, Tsuen Wan, NT</p>
+                    </div>
+                    <p class="contact__license" data-en="Licensed Food Factory: 2991802267" data-zh="食品製造廠牌照: 2991802267">Licensed Food Factory: 2991802267</p>
+                </div>
             </div>
         </div>
     </section>

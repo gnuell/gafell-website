@@ -106,7 +106,7 @@ h4 { font-size: 1.5rem; }
 }
 
 .nav__logo img {
-    height: 40px;
+    height: 50px;
     border-radius: 0;
 }
 
@@ -166,8 +166,22 @@ h4 { font-size: 1.5rem; }
 /* Hero Section */
 .hero {
     padding: calc(var(--spacing-xxl) * 2) 0 var(--spacing-xxl);
-    background-color: var(--color-gray-light);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/chef cutting veggies with gafell product infront.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     text-align: center;
+    color: var(--color-white);
+    position: relative;
+}
+
+.hero__title, .hero__subtitle, .hero__text p {
+    color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero__text {
+    color: var(--color-white);
 }
 
 .hero__title {
@@ -339,6 +353,28 @@ h4 { font-size: 1.5rem; }
 .contact__form {
     max-width: 600px;
     margin: 0 auto;
+}
+
+.contact__info {
+    max-width: 600px;
+    margin: var(--spacing-xl) auto 0;
+    text-align: center;
+    color: var(--color-gray-medium);
+}
+
+.contact__address {
+    margin-bottom: var(--spacing-md);
+}
+
+.contact__license {
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.g-recaptcha {
+    margin: var(--spacing-md) 0;
+    display: flex;
+    justify-content: center;
 }
 
 .form__group {

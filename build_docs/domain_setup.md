@@ -64,12 +64,12 @@ The contact form is configured to use Formspree for handling email submissions. 
 1. Go to https://formspree.io/
 2. Sign up and create a new form
 3. Formspree has been configured:
-   - Form endpoint: https://formspree.io/f/xbjvyeqb
-   - Submissions will be forwarded to info@gafell.com
+   - Form endpoint: https://formspree.io/f/mzzzkjor
+   - Submissions will be forwarded to tommy.leung@gafell.com
 
 ## Verification
 
 After setup:
 1. Test the contact form with reCAPTCHA
 2. Verify the domain is working with HTTPS
-3. Confirm emails are being received at info@gafell.com
+3. Confirm emails are being received at tommy.leung@gafell.com

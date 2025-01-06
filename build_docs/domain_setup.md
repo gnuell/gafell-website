@@ -38,10 +38,21 @@
 
 3. Configure Cloudflare SSL/TLS:
    - Go to SSL/TLS > Overview
-   - Set SSL/TLS encryption mode to "Full"
+   - Set SSL/TLS encryption mode to "Full (strict)"
    - Go to SSL/TLS > Edge Certificates
-   - Find "Always Use HTTPS" and switch it ON
-   - Find "Minimum TLS Version" and set to TLS 1.2
+   - Enable all of these options:
+     * Always Use HTTPS
+     * Automatic HTTPS Rewrites
+     * Opportunistic Encryption
+     * TLS 1.3
+   - Set Minimum TLS Version to 1.2
+   - Under "Origin Server":
+     * Click "Create Certificate"
+     * Select "Let Cloudflare generate a private key and a CSR"
+     * Set Hostnames to: gafell.com, *.gafell.com
+     * Set Certificate Validity to 15 years
+     * Click "Create"
+     * Copy the Origin Certificate and Private Key for backup
 
 4. Configure Page Rules:
    - Go to Rules > Page Rules

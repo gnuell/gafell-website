@@ -14,29 +14,48 @@
 
 ## Pointing gafell.com to GitHub Pages (Cloudflare Setup)
 
-1. In Cloudflare DNS settings:
-   - Remove any existing A or CNAME records for gafell.com
-   - Add these records:
-   ```
-   Type    Name    Content               Proxy status
-   A       @       185.199.108.153      Proxied
-   A       @       185.199.109.153      Proxied
-   A       @       185.199.110.153      Proxied
-   A       @       185.199.111.153      Proxied
-   CNAME   www     gnuell.github.io     Proxied
-   ```
-   
-2. Cloudflare SSL/TLS settings:
-   - Set SSL/TLS encryption mode to "Full"
-   - Enable "Always Use HTTPS"
-
-3. In your GitHub repository:
+1. In GitHub repository first:
    - Go to Settings > Pages
+   - Under "Build and deployment", ensure Source is set to "Deploy from a branch"
+   - Select "main" branch and "/" (root) folder
    - Under "Custom domain", enter: gafell.com
    - Click Save
-   - Check "Enforce HTTPS" once the certificate is ready
+   - Wait for GitHub to verify the domain
 
-3. Wait for DNS propagation (can take up to 48 hours)
+2. In Cloudflare DNS settings:
+   - Go to dash.cloudflare.com and select gafell.com
+   - Go to DNS > Records
+   - Remove any existing A or CNAME records for gafell.com
+   - Add these records exactly:
+   ```
+   Type    Name    Content               Proxy status
+   A       @       185.199.108.153      Proxied (orange cloud)
+   A       @       185.199.109.153      Proxied (orange cloud)
+   A       @       185.199.110.153      Proxied (orange cloud)
+   A       @       185.199.111.153      Proxied (orange cloud)
+   CNAME   www     gnuell.github.io     Proxied (orange cloud)
+   ```
+
+3. Configure Cloudflare SSL/TLS:
+   - Go to SSL/TLS > Overview
+   - Set SSL/TLS encryption mode to "Full"
+   - Go to SSL/TLS > Edge Certificates
+   - Find "Always Use HTTPS" and switch it ON
+   - Find "Minimum TLS Version" and set to TLS 1.2
+
+4. Configure Page Rules:
+   - Go to Rules > Page Rules
+   - Create a new page rule:
+     * URL: http://gafell.com/*
+     * Setting: Always Use HTTPS
+
+5. Verify Setup:
+   - Wait 5-10 minutes for initial propagation
+   - Try accessing https://gafell.com
+   - If you see a 404, go back to GitHub Pages settings and ensure:
+     * Custom domain is still set to gafell.com
+     * "Enforce HTTPS" option is available (may take up to 24 hours)
+     * The site is being built from the correct branch
 
 ## Email Form Setup
 

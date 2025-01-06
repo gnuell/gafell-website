@@ -281,26 +281,17 @@ h4 { font-size: 1.5rem; }
     background-color: var(--color-gray-light);
 }
 
-.clients__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: var(--spacing-xl);
-    align-items: center;
-    justify-items: center;
-    margin-top: var(--spacing-xl);
+.clients__showcase {
+    max-width: 900px;
+    margin: var(--spacing-xl) auto;
+    padding: 0 var(--spacing-md);
 }
 
-.client__logo img {
-    max-width: 120px;
+.clients__reference-image {
+    width: 100%;
     height: auto;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: all 0.3s ease;
-}
-
-.client__logo:hover img {
-    filter: grayscale(0);
-    opacity: 1;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .clients__text {

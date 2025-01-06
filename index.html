@@ -9,6 +9,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     
@@ -23,10 +26,19 @@
                 <img src="assets/images/GAFELL logo.png" alt="Gafell Logo">
             </a>
             <div class="nav__links">
+                <a href="#about" class="nav__link" data-en="About" data-zh="關於">About</a>
                 <a href="#services" class="nav__link" data-en="Services" data-zh="服務">Services</a>
                 <a href="#clients" class="nav__link" data-en="Clients" data-zh="客戶">Clients</a>
                 <a href="#facility" class="nav__link" data-en="Facility" data-zh="設施">Facility</a>
                 <a href="#contact" class="nav__link" data-en="Contact" data-zh="聯絡">Contact</a>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/gafell" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/gafellfood" target="_blank" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
                 <button class="lang-switch" data-lang="en">中文</button>
             </div>
             <button class="nav__toggle" aria-label="Toggle Menu">
@@ -41,8 +53,33 @@
     <section class="hero">
         <div class="container">
             <h1 class="hero__title" data-en="Professional Central Kitchen Services in Hong Kong" data-zh="香港專業中央廚房服務">Professional Central Kitchen Services in Hong Kong</h1>
-            <p class="hero__subtitle" data-en="10 years of excellence in food service solutions" data-zh="10年優質餐飲服務方案">10 years of excellence in food service solutions</p>
+            <p class="hero__subtitle" data-en="Excellence in Premium Food Production Since 2015" data-zh="自2015年起的優質餐飲製作">Excellence in Premium Food Production Since 2015</p>
+            <div class="hero__text">
+                <p data-en="Specializing in premium meal productions with advanced cook-chill and blast freezing technology" data-zh="專門使用先進的冷卻和速凍技術製作優質餐點">Specializing in premium meal productions with advanced cook-chill and blast freezing technology</p>
+            </div>
             <a href="#contact" class="btn btn--primary" data-en="Get Started" data-zh="立即開始">Get Started</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section__title" data-en="Our Story" data-zh="我們的故事">Our Story</h2>
+            <div class="about__content">
+                <div class="about__text">
+                    <p data-en="Founded in 2015, Gafell has established itself as a trusted leader in Hong Kong's food service industry. With over a decade of experience in central kitchen operations, we've built strong partnerships with many of Hong Kong's leading brands." 
+                       data-zh="自2015年成立以來，Gafell已成為香港餐飲服務行業的信譽領導者。憑藉超過十年的中央廚房營運經驗，我們與香港眾多領先品牌建立了穩固的合作關係。">Founded in 2015, Gafell has established itself as a trusted leader in Hong Kong's food service industry. With over a decade of experience in central kitchen operations, we've built strong partnerships with many of Hong Kong's leading brands.</p>
+                    <p data-en="Our commitment to quality and innovation has made us a stable supplier for premium establishments across Hong Kong, from retail chains to prestigious hotels and restaurants." 
+                       data-zh="我們對品質和創新的承諾，使我們成為香港各大優質機構的穩定供應商，從零售連鎖店到著名酒店和餐廳。">Our commitment to quality and innovation has made us a stable supplier for premium establishments across Hong Kong, from retail chains to prestigious hotels and restaurants.</p>
+                </div>
+                <div class="about__video">
+                    <div class="video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/vShlPlMNxEQ" title="Gafell x Cloudy Bay Wines Collaboration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-caption" data-en="Our collaboration with MHD Cloudy Bay Wines during COVID-19 lockdowns, featuring a special Christmas dinner wine pairing set." 
+                       data-zh="我們在新冠疫情封鎖期間與MHD Cloudy Bay Wines的合作，推出特別的聖誕晚餐配酒套餐。">Our collaboration with MHD Cloudy Bay Wines during COVID-19 lockdowns, featuring a special Christmas dinner wine pairing set.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -53,18 +90,18 @@
             <div class="services__grid">
                 <div class="service__card">
                     <img src="assets/images/chef cutting veggies with gafell product infront.jpg" alt="Central Kitchen Production">
-                    <h3 data-en="Central Kitchen Production" data-zh="中央廚房生產">Central Kitchen Production</h3>
-                    <p data-en="Professional food production services in our 2300 sqf facility" data-zh="2300平方呎設施內的專業食品生產服務">Professional food production services in our 2300 sqf facility</p>
+                    <h3 data-en="Premium Food Production" data-zh="優質食品生產">Premium Food Production</h3>
+                    <p data-en="Small-batch cooking with advanced cook-chill and blast freezing technology in our 2300 sqf facility" data-zh="在我們2300平方呎的設施內，採用先進的冷卻和速凍技術進行小批量烹飪">Small-batch cooking with advanced cook-chill and blast freezing technology in our 2300 sqf facility</p>
                 </div>
                 <div class="service__card">
                     <img src="assets/images/eatcleanfinal.jpg" alt="Healthy Meal Solutions">
-                    <h3 data-en="Healthy Meal Solutions" data-zh="健康餐飲方案">Healthy Meal Solutions</h3>
-                    <p data-en="Customized healthy meals for schools and corporations" data-zh="為學校和企業定制健康餐飲">Customized healthy meals for schools and corporations</p>
+                    <h3 data-en="Packaging Solutions" data-zh="包裝方案">Packaging Solutions</h3>
+                    <p data-en="Versatile packaging and sealing options with various tray types to meet different needs" data-zh="多樣化的包裝和密封選項，提供不同類型的托盤以滿足各種需求">Versatile packaging and sealing options with various tray types to meet different needs</p>
                 </div>
                 <div class="service__card">
                     <img src="assets/images/product development for impossible meats.jpg" alt="Product Development">
-                    <h3 data-en="Product Development" data-zh="產品開發">Product Development</h3>
-                    <p data-en="Custom recipe and product development services" data-zh="定制食譜和產品開發服務">Custom recipe and product development services</p>
+                    <h3 data-en="Logistics Solutions" data-zh="物流方案">Logistics Solutions</h3>
+                    <p data-en="Comprehensive delivery network with dedicated drivers for reliable logistics support" data-zh="擁有專業司機的完善送貨網絡，提供可靠的物流支援">Comprehensive delivery network with dedicated drivers for reliable logistics support</p>
                 </div>
             </div>
         </div>
@@ -75,13 +112,15 @@
         <div class="container">
             <h2 class="section__title" data-en="Trusted By Leading Brands" data-zh="受信任的領先品牌">Trusted By Leading Brands</h2>
             <div class="clients__grid">
-                <div class="client__logo">ParkNshop</div>
-                <div class="client__logo">Wellcome</div>
-                <div class="client__logo">Marketplace by Jasons</div>
-                <div class="client__logo">CitySuper</div>
-                <div class="client__logo">AEON</div>
-                <div class="client__logo">Oisix</div>
+                <div class="client__logo"><img src="assets/images/client-logos/parknshop.png" alt="ParkNshop"></div>
+                <div class="client__logo"><img src="assets/images/client-logos/wellcome.png" alt="Wellcome"></div>
+                <div class="client__logo"><img src="assets/images/client-logos/marketplace.png" alt="Marketplace by Jasons"></div>
+                <div class="client__logo"><img src="assets/images/client-logos/citysuper.png" alt="CitySuper"></div>
+                <div class="client__logo"><img src="assets/images/client-logos/aeon.png" alt="AEON"></div>
+                <div class="client__logo"><img src="assets/images/client-logos/oisix.png" alt="Oisix"></div>
+                <div class="client__logo"><img src="assets/images/client-logos/legoland.png" alt="Legoland Discovery Center"></div>
             </div>
+            <p class="clients__text" data-en="Trusted partner of leading brands in Hong Kong for over a decade" data-zh="十多年來一直是香港領先品牌的信賴合作夥伴">Trusted partner of leading brands in Hong Kong for over a decade</p>
         </div>
     </section>
 
@@ -91,11 +130,14 @@
             <h2 class="section__title" data-en="Our Facility" data-zh="我們的設施">Our Facility</h2>
             <div class="facility__content">
                 <div class="facility__text">
-                    <p data-en="State-of-the-art 2300 sqf central kitchen in Tsuen Wan" data-zh="位於荃灣的2300平方呎現代化中央廚房">State-of-the-art 2300 sqf central kitchen in Tsuen Wan</p>
+                    <p data-en="Our state-of-the-art 2300 sqf central kitchen in Tsuen Wan features advanced technology for premium food production" data-zh="我們位於荃灣的2300平方呎現代化中央廚房配備先進技術，用於優質食品生產">Our state-of-the-art 2300 sqf central kitchen in Tsuen Wan features advanced technology for premium food production</p>
                     <ul class="facility__features">
-                        <li data-en="Professional grade equipment" data-zh="專業級設備">Professional grade equipment</li>
-                        <li data-en="Strict quality control" data-zh="嚴格品質控制">Strict quality control</li>
-                        <li data-en="Health and safety certified" data-zh="健康和安全認證">Health and safety certified</li>
+                        <li data-en="Advanced cook-chill and blast freezing technology" data-zh="先進的冷卻和速凍技術">Advanced cook-chill and blast freezing technology</li>
+                        <li data-en="Versatile packaging and sealing systems" data-zh="多功能包裝和密封系統">Versatile packaging and sealing systems</li>
+                        <li data-en="Professional grade kitchen equipment" data-zh="專業級廚房設備">Professional grade kitchen equipment</li>
+                        <li data-en="Strict quality control processes" data-zh="嚴格的品質控制流程">Strict quality control processes</li>
+                        <li data-en="Health and safety certified facility" data-zh="健康和安全認證設施">Health and safety certified facility</li>
+                        <li data-en="Temperature-controlled storage" data-zh="溫度控制儲存">Temperature-controlled storage</li>
                     </ul>
                 </div>
                 <div class="facility__gallery">
@@ -139,6 +181,14 @@
             <div class="footer__content">
                 <img src="assets/images/GAFELL logo.png" alt="Gafell Logo" class="footer__logo">
                 <p class="footer__text" data-en="Professional Central Kitchen Services" data-zh="專業中央廚房服務">Professional Central Kitchen Services</p>
+            </div>
+            <div class="footer__social">
+                <a href="https://www.instagram.com/gafell" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/gafellfood" target="_blank" class="social-link">
+                    <i class="fab fa-facebook"></i>
+                </a>
             </div>
             <p class="footer__copyright">&copy; 2024 Gafell. All rights reserved.</p>
         </div>

@@ -99,11 +99,25 @@ The contact form is configured to use Formspree for handling email submissions. 
    - Provides easy navigation back to main sections
 
 2. URL Redirects Configuration:
-   - All old URLs are redirected to their new locations
-   - Language-specific paths redirect to main page with correct language
-   - www subdomain redirects to apex domain
-   - Blog and news URLs redirect to homepage
-   - All unmatched URLs show the 404 page
+   - Legacy Shopify URLs:
+     * Product collections redirect to Services section
+     * Individual product pages redirect to Services section
+     * Plant-based category pages redirect to Services section
+     * Blog posts and recipes redirect to homepage
+   
+   - Domain Variations:
+     * www to non-www redirects
+     * http to https redirects
+     * All domain variations point to https://gafell.com
+   
+   - Language Paths:
+     * /en/*, /zh/*, /zh-hk/*, /zh-tw/* redirect to homepage
+     * Language detection handles proper content display
+   
+   - Legacy Content:
+     * Old blog posts and recipes redirect to homepage
+     * About pages redirect to homepage
+     * All product collections redirect to Services section
 
 3. Implementation:
    - GitHub Pages: Uses 404.html for error handling

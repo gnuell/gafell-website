@@ -1,27 +1,34 @@
-# Redirect old pages to new structure
-/about-us              /                   301
-/about.html            /                   301
-/services.html         /#services          301
-/products             /#services          301
-/contact.html          /#contact           301
-/contact-us            /#contact           301
-/facility.html         /#facility          301
-/our-facility         /#facility          301
-/clients.html          /#clients           301
-/our-clients          /#clients           301
+# Redirect domain variations
+https://www.gafell.com/*     https://gafell.com/:splat  301!
+http://www.gafell.com/*      https://gafell.com/:splat  301!
+http://gafell.com/*          https://gafell.com/:splat  301!
+
+# Redirect old Shopify pages to new structure
+/collections/*            /#services          301
+/products/*              /#services          301
+/pages/about-us          /                   301
+/about-us                /                   301
+/about.html              /                   301
+
+# Handle old blog and news content
+/blogs/news/*            /                   301
+/blogs/recipes/*         /                   301
+/news/*                  /                   301
+/blog/*                  /                   301
 
 # Language-specific redirects
-/en/*                  /                   301
-/zh/*                  /                   301
-/zh-hk/*               /                   301
-/zh-tw/*               /                   301
+/en/*                    /                   301
+/zh/*                    /                   301
+/zh-hk/*                 /                   301
+/zh-tw/*                 /                   301
+/zh-tw/collections/*     /                   301
 
-# Redirect www to non-www
-https://www.gafell.com/*  https://gafell.com/:splat  301!
-
-# Handle old blog URLs if they existed
-/blog/*               /                   301
-/news/*               /                   301
+# Specific product categories
+/collections/ready-meals/*           /#services    301
+/collections/100-plant-based-ready-meals  /#services    301
+/collections/bean-pasta/*            /#services    301
+/collections/all-products            /#services    301
+/collections/all/category_plant-based /#services   301
 
 # Default redirect for 404s
-/*                    /404.html           404
+/*                      /404.html           404

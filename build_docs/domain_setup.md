@@ -91,9 +91,33 @@ The contact form is configured to use Formspree for handling email submissions. 
    - Form endpoint: https://formspree.io/f/mzzzkjor
    - Submissions will be forwarded to tommy.leung@gafell.com
 
+## URL Handling and Redirects
+
+1. 404 Page Setup:
+   - A custom 404.html page has been created
+   - Automatically detects user's language preference
+   - Provides easy navigation back to main sections
+
+2. URL Redirects Configuration:
+   - All old URLs are redirected to their new locations
+   - Language-specific paths redirect to main page with correct language
+   - www subdomain redirects to apex domain
+   - Blog and news URLs redirect to homepage
+   - All unmatched URLs show the 404 page
+
+3. Implementation:
+   - GitHub Pages: Uses 404.html for error handling
+   - Cloudflare: Uses _redirects rules for URL forwarding
+   - Both systems handle www to non-www redirects
+
 ## Verification
 
 After setup:
 1. Test the contact form with reCAPTCHA
 2. Verify the domain is working with HTTPS
 3. Confirm emails are being received at tommy.leung@gafell.com
+4. Test redirects:
+   - Try accessing old URLs
+   - Verify www to non-www redirect
+   - Check 404 page display
+   - Test language detection

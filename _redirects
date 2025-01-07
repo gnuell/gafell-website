@@ -1,0 +1,27 @@
+# Redirect old pages to new structure
+/about-us              /                   301
+/about.html            /                   301
+/services.html         /#services          301
+/products             /#services          301
+/contact.html          /#contact           301
+/contact-us            /#contact           301
+/facility.html         /#facility          301
+/our-facility         /#facility          301
+/clients.html          /#clients           301
+/our-clients          /#clients           301
+
+# Language-specific redirects
+/en/*                  /                   301
+/zh/*                  /                   301
+/zh-hk/*               /                   301
+/zh-tw/*               /                   301
+
+# Redirect www to non-www
+https://www.gafell.com/*  https://gafell.com/:splat  301!
+
+# Handle old blog URLs if they existed
+/blog/*               /                   301
+/news/*               /                   301
+
+# Default redirect for 404s
+/*                    /404.html           404

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Gafell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-xxl) var(--spacing-md);
+            background-color: var(--color-gray-light);
+        }
+        .error-content {
+            max-width: 600px;
+        }
+        .error-logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: var(--spacing-xl);
+        }
+        .error-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-primary);
+        }
+        .error-text {
+            margin-bottom: var(--spacing-xl);
+            color: var(--color-gray-medium);
+        }
+        .error-links {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-content">
+            <img src="assets/images/GAFELL logo.png" alt="Gafell Logo" class="error-logo">
+            <h1 class="error-title" data-en="Page Not Found" data-zh="找不到網頁">Page Not Found</h1>
+            <p class="error-text" data-en="The page you're looking for might have been moved or no longer exists." 
+               data-zh="您要查找的頁面可能已被移動或不存在。">The page you're looking for might have been moved or no longer exists.</p>
+            <div class="error-links">
+                <a href="/" class="btn btn--primary" data-en="Go to Homepage" data-zh="返回首頁">Go to Homepage</a>
+                <a href="/#contact" class="btn btn--primary" data-en="Contact Us" data-zh="聯絡我們">Contact Us</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Language switching for 404 page
+        const langElements = document.querySelectorAll('[data-en][data-zh]');
+        const userLang = navigator.language || navigator.userLanguage;
+        const defaultLang = userLang.startsWith('zh') ? 'zh' : 'en';
+        
+        langElements.forEach(element => {
+            element.textContent = element.getAttribute(`data-${defaultLang}`);
+        });
+    </script>
+</body>
+</html>

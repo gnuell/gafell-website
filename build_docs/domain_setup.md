@@ -47,12 +47,20 @@
      * TLS 1.3
    - Set Minimum TLS Version to 1.2
    - Under "Origin Server":
-     * Click "Create Certificate"
-     * Select "Let Cloudflare generate a private key and a CSR"
-     * Set Hostnames to: gafell.com, *.gafell.com
-     * Set Certificate Validity to 15 years
-     * Click "Create"
-     * Copy the Origin Certificate and Private Key for backup
+     * Go to "Origin Server" tab
+     * Click "Install Certificate"
+     * The Origin Certificate and Private Key have been generated and saved
+     * Verify the certificate is active for:
+       - gafell.com
+       - *.gafell.com
+     * Certificate is valid until January 4, 2040
+
+Note: The Origin Certificate and Private Key have been securely saved. Do not share these credentials. They are required if you need to reinstall the certificate in the future.
+
+4. Wait for Certificate Propagation:
+   - It may take 5-15 minutes for the SSL certificate to become active
+   - During this time, you might see Error 526 (Invalid SSL certificate)
+   - Once propagation is complete, the site will be accessible via HTTPS
 
 4. Configure Page Rules:
    - Go to Rules > Page Rules

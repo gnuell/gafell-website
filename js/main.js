@@ -56,37 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form handling
-    const contactForm = document.querySelector('.contact__form');
-    
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData.entries());
-        
-        // Basic validation
-        for (let [key, value] of Object.entries(data)) {
-            if (!value.trim()) {
-                alert(`Please fill in the ${key} field`);
-                return;
-            }
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(data.email)) {
-            alert('Please enter a valid email address');
-            return;
-        }
-
-        // For now, just show success message
-        // In production, this would send data to a server
-        alert('Thank you for your message. We will contact you soon!');
-        contactForm.reset();
-    });
-
     // Intersection Observer for fade-in animations
     const observerOptions = {
         threshold: 0.1,
@@ -107,4 +76,64 @@ document.addEventListener('DOMContentLoaded', () => {
         section.classList.add('fade-in');
         observer.observe(section);
     });
+});
+
+// Form handling with reCAPTCHA
+window.onRecaptchaSuccess = function() {
+    document.getElementById('submit-button').removeAttribute('disabled');
+};
+
+window.onRecaptchaError = function() {
+    document.getElementById('submit-button').setAttribute('disabled', 'disabled');
+};
+
+window.onRecaptchaExpired = function() {
+    document.getElementById('submit-button').setAttribute('disabled', 'disabled');
+};
+
+document.querySelector('.contact__form').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const submitButton = document.getElementById('submit-button');
+    const recaptchaResponse = grecaptcha.getResponse();
+
+    if (!recaptchaResponse) {
+        alert('Please complete the reCAPTCHA verification');
+        return;
+    }
+
+    const form = event.target;
+    const formData = new FormData(form);
+    formData.append('g-recaptcha-response', recaptchaResponse);
+
+    submitButton.disabled = true;
+    const currentText = submitButton.textContent;
+    submitButton.textContent = currentText === '發送訊息' ? '發送中...' : 'Sending...';
+
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            form.reset();
+            grecaptcha.reset();
+            submitButton.textContent = currentText === '發送訊息' ? '訊息已發送！' : 'Message Sent!';
+            setTimeout(() => {
+                submitButton.textContent = currentText;
+                submitButton.disabled = true;
+            }, 3000);
+        } else {
+            throw new Error('Form submission failed');
+        }
+    } catch (error) {
+        submitButton.textContent = currentText === '發送訊息' ? '發送失敗！' : 'Error! Try Again';
+        submitButton.disabled = false;
+        setTimeout(() => {
+            submitButton.textContent = currentText;
+        }, 3000);
+    }
 });

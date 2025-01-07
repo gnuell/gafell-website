@@ -25,20 +25,25 @@
 2. In Cloudflare DNS settings:
    - Go to dash.cloudflare.com and select gafell.com
    - Go to DNS > Records
-   - Remove any existing A or CNAME records for gafell.com
-   - Add these records exactly:
-   ```
-   Type    Name    Content               Proxy status
-   A       @       185.199.108.153      Proxied (orange cloud)
-   A       @       185.199.109.153      Proxied (orange cloud)
-   A       @       185.199.110.153      Proxied (orange cloud)
-   A       @       185.199.111.153      Proxied (orange cloud)
-   CNAME   www     gnuell.github.io     Proxied (orange cloud)
-   ```
+   - Keep all MX, TXT, and special CNAME records (like _domainconnect, email, send)
+   - Update the main domain records:
+     ```
+     Type    Name    Content               Proxy status
+     A       @       185.199.108.153      DNS only (gray cloud)
+     A       @       185.199.109.153      DNS only (gray cloud)
+     A       @       185.199.110.153      DNS only (gray cloud)
+     A       @       185.199.111.153      DNS only (gray cloud)
+     CNAME   www     gnuell.github.io     DNS only (gray cloud)
+     ```
+   - Remove or update these records if they exist:
+     * CNAME ftp -> remove
+     * CNAME mail -> remove (since you're using Google MX)
+
+   Note: We're setting records to "DNS only" (gray cloud) initially to resolve the SSL issue. Once the site is working, we can re-enable Cloudflare proxy.
 
 3. Configure Cloudflare SSL/TLS:
    - Go to SSL/TLS > Overview
-   - Set SSL/TLS encryption mode to "Full (strict)"
+   - Set SSL/TLS encryption mode to "Flexible" temporarily
    - Go to SSL/TLS > Edge Certificates
    - Enable all of these options:
      * Always Use HTTPS

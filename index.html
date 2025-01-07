@@ -12,8 +12,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- reCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdSdq8qAAAAABgTDGLPePsCVOva-M4lOyDoZyz4"></script>
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
@@ -168,14 +168,8 @@
                         <textarea id="message" name="message" required></textarea>
                     </div>
                     <input type="text" name="_gotcha" style="display:none">
-                    <div class="form__group">
-                        <div class="g-recaptcha" 
-                             data-sitekey="6LdSdq8qAAAAABgTDGLPePsCVOva-M4lOyDoZyz4" 
-                             data-callback="onRecaptchaSuccess"
-                             data-error-callback="onRecaptchaError"
-                             data-expired-callback="onRecaptchaExpired"></div>
-                    </div>
-                    <button type="submit" class="btn btn--primary" data-en="Send Message" data-zh="發送訊息" id="submit-button" disabled>Send Message</button>
+                    <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                    <button type="submit" class="btn btn--primary" data-en="Send Message" data-zh="發送訊息" id="submit-button">Send Message</button>
                 </form>
                 <div class="contact__info">
                     <div class="contact__address">

@@ -78,38 +78,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Form handling with reCAPTCHA
-window.onRecaptchaSuccess = function() {
-    document.getElementById('submit-button').removeAttribute('disabled');
-};
-
-window.onRecaptchaError = function() {
-    document.getElementById('submit-button').setAttribute('disabled', 'disabled');
-};
-
-window.onRecaptchaExpired = function() {
-    document.getElementById('submit-button').setAttribute('disabled', 'disabled');
-};
-
+// Form handling with reCAPTCHA v3
 document.querySelector('.contact__form').addEventListener('submit', async (event) => {
     event.preventDefault();
     const submitButton = document.getElementById('submit-button');
-    const recaptchaResponse = grecaptcha.getResponse();
-
-    if (!recaptchaResponse) {
-        alert('Please complete the reCAPTCHA verification');
-        return;
-    }
-
-    const form = event.target;
-    const formData = new FormData(form);
-    formData.append('g-recaptcha-response', recaptchaResponse);
-
-    submitButton.disabled = true;
     const currentText = submitButton.textContent;
+    
+    submitButton.disabled = true;
     submitButton.textContent = currentText === '發送訊息' ? '發送中...' : 'Sending...';
 
     try {
+        // Execute reCAPTCHA with form submit action
+        const token = await grecaptcha.execute('6LdSdq8qAAAAABgTDGLPePsCVOva-M4lOyDoZyz4', {action: 'submit'});
+        
+        // Add the token to the form
+        document.getElementById('g-recaptcha-response').value = token;
+        
+        const form = event.target;
+        const formData = new FormData(form);
+
         const response = await fetch(form.action, {
             method: 'POST',
             body: formData,
@@ -120,11 +107,10 @@ document.querySelector('.contact__form').addEventListener('submit', async (event
 
         if (response.ok) {
             form.reset();
-            grecaptcha.reset();
             submitButton.textContent = currentText === '發送訊息' ? '訊息已發送！' : 'Message Sent!';
             setTimeout(() => {
                 submitButton.textContent = currentText;
-                submitButton.disabled = true;
+                submitButton.disabled = false;
             }, 3000);
         } else {
             throw new Error('Form submission failed');
